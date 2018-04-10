@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import com.example.enzoteles.arquiteturamvpk.MainActivityK
 import com.example.enzoteles.arquiteturamvpk.R
 import kotlinx.android.synthetic.main.login.view.*
 
@@ -18,16 +17,19 @@ import kotlinx.android.synthetic.main.login.view.*
  */
 
 class LoginFragment : Fragment(), OnLoginMVP.view {
+    override fun logoAlphaAndRotation(logo: ImageView, view: View) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater!!.inflate(R.layout.login, container, false)
         view.btn_login.text = "Login"
 
-        var logo = view.logo
+        /*var logo = view.logo
 
         //animation
-        logoAlphaAndRotation(logo, view)
+        logoAlphaAndRotation(logo, view)*/
 
         //call the method of the presenter
         //init dagger component
@@ -43,7 +45,7 @@ class LoginFragment : Fragment(), OnLoginMVP.view {
         return view
     }
 
-    override fun logoAlphaAndRotation(logo: ImageView, view: View) {
+    /*override fun logoAlphaAndRotation(logo: ImageView, view: View) {
 
         ObjectAnimator.ofFloat(logo, "alpha", 0f, 1f).apply {
             duration = 3000
@@ -67,7 +69,7 @@ class LoginFragment : Fragment(), OnLoginMVP.view {
 
         }, 3000)
 
-    }
+    }*/
 
 }
 
